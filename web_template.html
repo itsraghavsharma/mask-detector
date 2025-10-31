@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask Detection System - Security Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #111827;
+            --bg-card: #1f2937;
+            --bg-card-hover: #283447;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --border: #374151;
+            --border-light: #4b5563;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --shadow-lg: rgba(0, 0, 0, 0.5);
+        }
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --border-light: #cbd5e1;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-lg: rgba(0, 0, 0, 0.15);
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .navbar {
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+        [data-theme="light"] .navbar {
+            background: rgba(255, 255, 255, 0.95);
+        }
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card);
+            border-color: var(--primary);
+        }
+        .nav-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .tab-btn {
+            padding: 0.625rem 1.25rem;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+        }
+        .tab-btn:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--text-primary);
+        }
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        [data-theme="light"] .tab-btn.active {
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+        .container {
+            max-width: 1600px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+        
+        /* Live Feed */
+        .cameras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .camera-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        .camera-card:hover {
+            box-shadow: 0 8px 30px var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        .camera-header {
+            padding: 1.25rem 1.5rem;
+            background: rgba(31, 41, 55, 0.8);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .camera-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+            letter-spacing: 0.3px;
+        }
+        .camera-stats {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .camera-feed {
+            position: relative;
+            background: #000;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+        [data-theme="light"] .camera-feed {
+            background: #1a1a1a;
+        }
+        .camera-feed img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        
+        /* Events */
+        .events-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .events-list {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+        .event-item {
+            display: grid;
+            grid-template-columns: 140px 1fr auto;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s ease;
+        }
+        .event-item:last-child { border-bottom: none; }
+        .event-item:hover {
+            background: var(--bg-card-hover);
+        }
+        .event-item.false-claim {
+            opacity: 0.7;
+            background: rgba(239, 68, 68, 0.05);
+        }
+        .event-img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        .event-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .event-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+        }
+        .event-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            font-weight: 500;
+        }
+        .event-meta span:not(:last-child)::after {
+            content: '•';
+            margin-left: 1rem;
+            color: var(--border-light);
+        }
+        .event-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.375rem 0.875rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+        .badge-with-mask {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .badge-without-mask {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        .badge-incorrect {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        .event-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+        .btn {
+            padding: 0.625rem 1.25rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+        .btn-danger:hover {
+            background: #dc2626;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover {
+            background: var(--bg-card);
+            border-color: var(--border-light);
+        }
+        
+        /* Face Management */
+        .faces-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .faces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .face-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+        .face-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 30px var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .face-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+        }
+        .face-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .face-img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        .upload-area {
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            background: rgba(31, 41, 55, 0.5);
+        }
+        .upload-area:hover {
+            border-color: var(--primary);
+            background: rgba(59, 130, 246, 0.05);
+        }
+        .upload-area.dragover {
+            border-color: var(--primary);
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Analytics */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.5rem;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            box-shadow: 0 8px 30px var(--shadow-lg);
+        }
+        .stat-card[style*="border-left"] {
+            border-left-width: 4px;
+            border-left-style: solid;
+        }
+        .stat-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .stat-row:last-child { border-bottom: none; }
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .stat-value {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--text-primary);
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #8b5cf6);
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        [data-theme="light"] .modal {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 550px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border);
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.75rem;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .close-btn:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        select.form-input {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Mask Detection System</div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('live')">Live Feed</button>
+                    <button class="tab-btn" onclick="switchTab('events')">Events</button>
+                    <button class="tab-btn" onclick="switchTab('faces')">Face Management</button>
+                    <button class="tab-btn" onclick="switchTab('cameras')">Cameras</button>
+                    <button class="tab-btn" onclick="switchTab('analytics')">Analytics</button>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle-btn">
+                    <span id="theme-icon">🌙</span>
+                    <span id="theme-text">Dark</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="tab-live" class="tab-content active">
+            <h2>Live Camera Feed</h2>
+            <div class="cameras-grid" id="cameras"></div>
+        </div>
+
+        <div id="tab-events" class="tab-content">
+            <div class="events-header">
+                <h2>Event Log</h2>
+                <div style="display: flex; gap: 0.75rem;">
+                    <select id="filter-class" class="form-input" style="width: auto; padding: 0.625rem 1rem;">
+                        <option value="">All Classes</option>
+                        <option value="with_mask">With Mask</option>
+                        <option value="without_mask">Without Mask</option>
+                        <option value="mask_weared _incorrect">Incorrect</option>
+                    </select>
+                    <button class="btn btn-secondary" onclick="loadEvents()">Refresh</button>
+                </div>
+            </div>
+            <div class="events-list" id="events-list"></div>
+        </div>
+
+        <div id="tab-faces" class="tab-content">
+            <div class="faces-header">
+                <h2>Face Management</h2>
+                <button class="btn btn-primary" onclick="showAddFaceModal()">Add Person</button>
+            </div>
+            <div id="faces-grid" class="faces-grid"></div>
+        </div>
+
+        <div id="tab-cameras" class="tab-content">
+            <div class="faces-header">
+                <h2>Camera Management</h2>
+                <button class="btn btn-primary" onclick="showAddCameraModal()">Add Camera</button>
+            </div>
+            <div id="cameras-list" class="faces-grid"></div>
+        </div>
+
+        <div id="tab-analytics" class="tab-content">
+            <h2>Compliance Analytics</h2>
+            <div class="analytics-grid" id="analytics-grid"></div>
+        </div>
+    </div>
+
+    <div id="add-face-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Person</h3>
+                <button class="close-btn" onclick="closeModal('add-face-modal')">&times;</button>
+            </div>
+            <form id="add-face-form" onsubmit="addFace(event)">
+                <div class="form-group">
+                    <label class="form-label">Person Name</label>
+                    <input type="text" class="form-input" id="face-name" required placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Upload Face Images</label>
+                    <div class="upload-area" id="upload-area" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" onclick="document.getElementById('face-images').click()">
+                        <p style="color: var(--text-secondary); font-weight: 500;">Drag & drop images here or click to select</p>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Multiple images recommended for better recognition</p>
+                        <input type="file" id="face-images" multiple accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+                    </div>
+                    <div id="selected-images"></div>
+                </div>
+                <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 2rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('add-face-modal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Person</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="add-camera-modal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3>Add Camera</h3>
+                <button class="close-btn" onclick="closeModal('add-camera-modal')">&times;</button>
+            </div>
+            <form id="add-camera-form" onsubmit="addCamera(event)">
+                <div class="form-group">
+                    <label class="form-label">Camera ID <span style="color: var(--text-muted); font-size: 0.85rem;">(e.g., Camera_1)</span></label>
+                    <input type="text" class="form-input" id="camera-id" required placeholder="Camera_1">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">RTSP URL <span style="color: var(--text-muted); font-size: 0.85rem;">(required)</span></label>
+                    <input type="text" class="form-input" id="camera-rtsp" required placeholder="rtsp://user:pass@ip:port/path">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Focal Length (mm)</label>
+                        <input type="number" class="form-input" id="camera-focal" value="50.0" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Sensor Width (mm)</label>
+                        <input type="number" class="form-input" id="camera-sensor" value="36.0" step="0.1">
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Frame Width</label>
+                        <input type="number" class="form-input" id="camera-width" value="1920">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Frame Height</label>
+                        <input type="number" class="form-input" id="camera-height" value="1080">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Known Face Width (cm)</label>
+                    <input type="number" class="form-input" id="camera-face-width" value="15.0" step="0.1">
+                </div>
+                <div style="margin-top: 1rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border);">
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;"><strong>Note:</strong> Maximum of 4 cameras allowed.</p>
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">Camera will be added and start streaming automatically.</p>
+                </div>
+                <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 2rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('add-camera-modal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Camera</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let selectedFiles = [];
+
+        // Theme Management
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            const icon = document.getElementById('theme-icon');
+            const text = document.getElementById('theme-text');
+            if (theme === 'light') {
+                icon.textContent = '☀️';
+                text.textContent = 'Light';
+            } else {
+                icon.textContent = '🌙';
+                text.textContent = 'Dark';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        }
+
+        // Initialize theme on load
+        initTheme();
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`tab-${tab}`).classList.add('active');
+            event.target.classList.add('active');
+            
+            if (tab === 'events') loadEvents();
+            if (tab === 'faces') loadFaces();
+            if (tab === 'cameras') loadCamerasList();
+            if (tab === 'analytics') loadAnalytics();
+        }
+
+        async function loadCameras() {
+            try {
+                const res = await fetch('/api/cameras');
+                const data = await res.json();
+                const cameras = data.cameras.map(cam => cam.camera_id);
+                const container = document.getElementById('cameras');
+                
+                if (cameras.length === 0) {
+                    container.innerHTML = '<div style="padding: 3rem; text-align: center; color: var(--text-muted);">No cameras configured. Go to Cameras tab to add cameras.</div>';
+                    return;
+                }
+                
+                container.innerHTML = cameras.map(id => `
+                    <div class="camera-card">
+                        <div class="camera-header">
+                            <div class="camera-title">Camera ${id}</div>
+                            <div class="camera-stats" id="stats-${id}">Loading...</div>
+                        </div>
+                        <div class="camera-feed">
+                            <img src="/video_feed/${id}" alt="Camera ${id}">
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Update stats periodically
+                setInterval(() => {
+                    cameras.forEach(async id => {
+                        try {
+                            const res = await fetch(`/stats/${id}`);
+                            const data = await res.json();
+                            const statsEl = document.getElementById(`stats-${id}`);
+                            if (statsEl) {
+                                statsEl.innerHTML = 
+                                    `FPS: ${data.fps.toFixed(1)} | Detections: ${data.detections}`;
+                            }
+                        } catch (e) {}
+                    });
+                }, 1000);
+            } catch (e) {
+                console.error('Error loading cameras:', e);
+            }
+        }
+
+        async function loadEvents() {
+            try {
+                const filter = document.getElementById('filter-class')?.value || '';
+                const res = await fetch(`/events?limit=100${filter ? '&class=' + filter : ''}`);
+                const events = await res.json();
+                const container = document.getElementById('events-list');
+                
+                if (events.length === 0) {
+                    container.innerHTML = '<div style="padding: 3rem; text-align: center; color: var(--text-muted);">No events found</div>';
+                    return;
+                }
+                
+                container.innerHTML = events.map(ev => `
+                    <div class="event-item ${ev.is_false_claim ? 'false-claim' : ''}">
+                        <img src="${ev.image_url}" class="event-img" alt="Event">
+                        <div class="event-details">
+                            <div class="event-name">${ev.recognized_name || 'Unknown Person'}</div>
+                            <div class="event-meta">
+                                <span>${new Date(ev.ts).toLocaleString()}</span>
+                                <span>${ev.camera_id}</span>
+                                <span>Confidence: ${(ev.confidence||0).toFixed(2)}</span>
+                                ${ev.distance_m ? `<span>Distance: ${ev.distance_m.toFixed(2)}m</span>` : ''}
+                            </div>
+                            <div>
+                                <span class="event-badge ${getBadgeClass(ev.class)}">${formatClass(ev.class)}</span>
+                                ${ev.is_false_claim ? '<span class="event-badge" style="background: rgba(239, 68, 68, 0.15); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.3); margin-left: 0.5rem;">False Claim</span>' : ''}
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            ${!ev.is_false_claim ? `<button class="btn btn-danger" onclick="markFalseClaim(${ev.id})">Mark False</button>` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                console.error('Error loading events:', e);
+            }
+        }
+
+        function getBadgeClass(cls) {
+            if (cls === 'with_mask') return 'badge-with-mask';
+            if (cls === 'without_mask') return 'badge-without-mask';
+            return 'badge-incorrect';
+        }
+
+        function formatClass(cls) {
+            const map = {
+                'with_mask': 'With Mask',
+                'without_mask': 'Without Mask',
+                'mask_weared _incorrect': 'Incorrect'
+            };
+            return map[cls] || cls;
+        }
+
+        async function markFalseClaim(eventId) {
+            if (!confirm('Mark this event as false claim?')) return;
+            try {
+                const res = await fetch(`/events/${eventId}/false-claim`, { method: 'POST' });
+                if (res.ok) {
+                    loadEvents();
+                }
+            } catch (e) {
+                alert('Error marking false claim');
+            }
+        }
+
+        async function loadFaces() {
+            try {
+                const res = await fetch('/faces');
+                const faces = await res.json();
+                const container = document.getElementById('faces-grid');
+                
+                if (faces.length === 0) {
+                    container.innerHTML = '<div style="padding: 3rem; text-align: center; color: var(--text-muted); grid-column: 1/-1;">No faces registered. Add your first person.</div>';
+                    return;
+                }
+                
+                container.innerHTML = faces.map(face => `
+                    <div class="face-card">
+                        <div class="face-name">${face.name}</div>
+                        <div class="face-images">
+                            ${face.images.slice(0, 3).map(img => `<img src="${img}" class="face-img">`).join('')}
+                        </div>
+                        <div style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-muted); font-weight: 500;">
+                            ${face.image_count} image${face.image_count !== 1 ? 's' : ''}
+                        </div>
+                        <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
+                            <button class="btn btn-secondary" style="flex: 1;" onclick="addMoreImagesToPerson('${face.name}')">Add Images</button>
+                            <button class="btn btn-danger" onclick="deletePerson('${face.name}')">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                console.error('Error loading faces:', e);
+            }
+        }
+
+        function showAddFaceModal() {
+            document.getElementById('add-face-modal').classList.add('active');
+            selectedFiles = [];
+            updateSelectedImages();
+            document.getElementById('face-name').value = '';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+        }
+
+        function handleDragLeave(e) {
+            e.currentTarget.classList.remove('dragover');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+            const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/'));
+            selectedFiles.push(...files);
+            updateSelectedImages();
+        }
+
+        function handleFileSelect(e) {
+            selectedFiles.push(...Array.from(e.target.files));
+            updateSelectedImages();
+        }
+
+        function updateSelectedImages() {
+            const container = document.getElementById('selected-images');
+            if (selectedFiles.length === 0) {
+                container.innerHTML = '';
+                return;
+            }
+            container.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 0.75rem; margin-top: 1rem;">
+                    ${selectedFiles.map((file, idx) => `
+                        <div style="position: relative;">
+                            <img src="${URL.createObjectURL(file)}" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; border: 1px solid var(--border);">
+                            <button onclick="removeFile(${idx})" style="position: absolute; top: 4px; right: 4px; background: var(--danger); color: white; border: none; border-radius: 50%; width: 28px; height: 28px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">×</button>
+                        </div>
+                    `).join('')}
+                </div>
+                <p style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">${selectedFiles.length} file${selectedFiles.length !== 1 ? 's' : ''} selected</p>
+            `;
+        }
+
+        function removeFile(index) {
+            selectedFiles.splice(index, 1);
+            updateSelectedImages();
+        }
+
+        async function addFace(e) {
+            e.preventDefault();
+            const name = document.getElementById('face-name').value.trim();
+            if (!name || selectedFiles.length === 0) {
+                alert('Please provide name and at least one image');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('name', name);
+            selectedFiles.forEach(file => formData.append('images', file));
+
+            try {
+                const res = await fetch('/faces', { method: 'POST', body: formData });
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    closeModal('add-face-modal');
+                    document.getElementById('face-name').value = '';
+                    selectedFiles = [];
+                    updateSelectedImages();
+                    loadFaces();
+                    alert(`Person added successfully! ${data.saved_count} image(s) saved.`);
+                } else {
+                    alert(data.error || 'Error adding person');
+                }
+            } catch (e) {
+                alert('Error adding person');
+            }
+        }
+
+        async function addMoreImagesToPerson(name) {
+            selectedFiles = [];
+            updateSelectedImages();
+            document.getElementById('face-name').value = name;
+            document.getElementById('add-face-modal').classList.add('active');
+        }
+
+        async function deletePerson(name) {
+            if (!confirm(`Delete ${name}? This cannot be undone.`)) return;
+            try {
+                const res = await fetch(`/faces/${encodeURIComponent(name)}`, { method: 'DELETE' });
+                if (res.ok) {
+                    loadFaces();
+                    alert('Person deleted successfully!');
+                } else {
+                    alert('Error deleting person');
+                }
+            } catch (e) {
+                alert('Error deleting person');
+            }
+        }
+
+        async function loadAnalytics() {
+            try {
+                const res = await fetch('/analytics');
+                const data = await res.json();
+                const container = document.getElementById('analytics-grid');
+                
+                if (!data.persons || data.persons.length === 0) {
+                    container.innerHTML = '<div style="padding: 3rem; text-align: center; color: var(--text-muted); grid-column: 1/-1;">No violation data available</div>';
+                    return;
+                }
+                
+                let html = `
+                    <div class="stat-card" style="grid-column: 1/-1; border-left-color: var(--primary);">
+                        <div class="stat-name">Overall Statistics</div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;">
+                            <div>
+                                <div class="stat-label">Total Violations</div>
+                                <div class="stat-value" style="font-size: 2.5rem; color: var(--danger); margin-top: 0.5rem;">${data.summary.total_violations}</div>
+                            </div>
+                            <div>
+                                <div class="stat-label">Unique Offenders</div>
+                                <div class="stat-value" style="font-size: 2.5rem; margin-top: 0.5rem;">${data.summary.unique_offenders}</div>
+                            </div>
+                            <div>
+                                <div class="stat-label">Peak Hour</div>
+                                <div class="stat-value" style="margin-top: 0.5rem;">${String(data.summary.peak_hour).padStart(2, '0')}:00</div>
+                                <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">${data.summary.peak_hour_count} violations</div>
+                            </div>
+                            <div>
+                                <div class="stat-label">Most Violations Day</div>
+                                <div class="stat-value" style="margin-top: 0.5rem;">${data.summary.peak_day || 'N/A'}</div>
+                                <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">${data.summary.peak_day_count} violations</div>
+                            </div>
+                            ${data.summary.worst_camera ? `
+                            <div>
+                                <div class="stat-label">Worst Camera</div>
+                                <div class="stat-value" style="margin-top: 0.5rem;">${data.summary.worst_camera}</div>
+                                <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">${data.summary.worst_camera_count} violations</div>
+                            </div>
+                            ` : ''}
+                            ${data.summary.avg_distance_m ? `
+                            <div>
+                                <div class="stat-label">Avg Detection Distance</div>
+                                <div class="stat-value" style="margin-top: 0.5rem;">${data.summary.avg_distance_m}m</div>
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card" style="grid-column: 1/-1;">
+                        <div class="stat-name">Hourly Violation Distribution (24 Hours)</div>
+                        <div style="display: grid; grid-template-columns: repeat(24, 1fr); gap: 0.375rem; margin-top: 1.5rem; overflow-x: auto; padding-bottom: 0.5rem;">
+                            ${Array.from({length: 24}, (_, hour) => {
+                                const count = data.hourly_distribution[hour] || 0;
+                                const maxCount = Math.max(...Object.values(data.hourly_distribution), 1);
+                                const height = maxCount > 0 ? (count / maxCount) * 100 : 0;
+                                return `
+                                    <div style="display: flex; flex-direction: column; align-items: center;">
+                                        <div style="width: 100%; background: var(--bg-secondary); border-radius: 6px; height: 120px; display: flex; align-items: flex-end; border: 1px solid var(--border);">
+                                            <div style="width: 100%; background: linear-gradient(180deg, var(--danger), var(--warning)); border-radius: 6px; height: ${height}%; min-height: ${count > 0 ? '4px' : '0'}; transition: height 0.3s ease;"></div>
+                                        </div>
+                                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 500;">${String(hour).padStart(2, '0')}</div>
+                                        <div style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">${count}</div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card" style="grid-column: 1/-1;">
+                        <div class="stat-name">14-Day Trend</div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 0.75rem; margin-top: 1.5rem;">
+                            ${Object.entries(data.daily_distribution).map(([date, count]) => {
+                                const maxCount = Math.max(...Object.values(data.daily_distribution));
+                                const height = maxCount > 0 ? (count / maxCount) * 100 : 0;
+                                const dateObj = new Date(date);
+                                return `
+                                    <div style="display: flex; flex-direction: column; align-items: center;">
+                                        <div style="width: 100%; background: var(--bg-secondary); border-radius: 6px; height: 140px; display: flex; align-items: flex-end; border: 1px solid var(--border);">
+                                            <div style="width: 100%; background: var(--primary); border-radius: 6px; height: ${height}%; min-height: ${count > 0 ? '4px' : '0'}; transition: height 0.3s ease;"></div>
+                                        </div>
+                                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 500;">${dateObj.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}</div>
+                                        <div style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">${count}</div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+                
+                html += data.persons.map(person => {
+                    const severityColor = {
+                        'high': 'var(--danger)',
+                        'medium': 'var(--warning)',
+                        'low': 'var(--success)'
+                    }[person.severity] || 'var(--text-muted)';
+                    
+                    return `
+                        <div class="stat-card" style="border-left-color: ${severityColor};">
+                            <div class="stat-name">${person.name}
+                                <span style="font-size: 0.875rem; color: ${severityColor}; margin-left: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                                    ${person.severity} Risk
+                                </span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Total Violations</span>
+                                <span class="stat-value" style="color: var(--danger); font-size: 1.75rem;">${person.total_violations}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Violations per Day</span>
+                                <span class="stat-value">${person.violations_per_day}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Cameras Seen</span>
+                                <span class="stat-value">${person.camera_count} (${person.cameras_seen_in.join(', ')})</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Days Active</span>
+                                <span class="stat-value">${person.days_active}</span>
+                            </div>
+                            ${person.avg_distance_m ? `
+                            <div class="stat-row">
+                                <span class="stat-label">Average Distance</span>
+                                <span class="stat-value">${person.avg_distance_m}m</span>
+                            </div>
+                            ` : ''}
+                            <div class="stat-row">
+                                <span class="stat-label">Average Confidence</span>
+                                <span class="stat-value">${person.avg_confidence}</span>
+                            </div>
+                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                                <div style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.8;">
+                                    <div><strong>First seen:</strong> ${new Date(person.first_seen).toLocaleString()}</div>
+                                    <div><strong>Last seen:</strong> ${new Date(person.last_seen).toLocaleString()}</div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                                    <span class="stat-label">Violation Frequency</span>
+                                    <span class="stat-value">${person.total_violations} in ${person.days_active} day${person.days_active !== 1 ? 's' : ''}</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${Math.min((person.violations_per_day / 10) * 100, 100)}%; background: ${severityColor};"></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                container.innerHTML = html;
+            } catch (e) {
+                console.error('Error loading analytics:', e);
+                container.innerHTML = '<div style="padding: 3rem; text-align: center; color: var(--text-muted); grid-column: 1/-1;">Error loading analytics</div>';
+            }
+        }
+
+        // Camera Management
+        async function loadCamerasList() {
+            try {
+                const res = await fetch('/api/cameras');
+                const data = await res.json();
+                const container = document.getElementById('cameras-list');
+                
+                if (data.cameras.length === 0) {
+                    container.innerHTML = '<div style="padding: 3rem; text-align: center; color: var(--text-muted); grid-column: 1/-1;">No cameras configured. Add your first camera.</div>';
+                    return;
+                }
+                
+                container.innerHTML = data.cameras.map(cam => {
+                    const statusColor = cam.status === 'online' ? 'var(--success)' : 'var(--text-muted)';
+                    return `
+                        <div class="face-card">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <div class="face-name">${cam.camera_id}</div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <div style="width: 8px; height: 8px; border-radius: 50%; background: ${statusColor};"></div>
+                                    <span style="font-size: 0.875rem; color: var(--text-muted); font-weight: 500;">${cam.status}</span>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <div style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                                    <strong>RTSP URL:</strong>
+                                </div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary); word-break: break-all; padding: 0.75rem; background: var(--bg-secondary); border-radius: 6px; border: 1px solid var(--border);">
+                                    ${cam.rtsp_url}
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; font-size: 0.85rem;">
+                                <div>
+                                    <div style="color: var(--text-muted);">Resolution</div>
+                                    <div style="color: var(--text-primary); font-weight: 500;">${cam.frame_width} × ${cam.frame_height}</div>
+                                </div>
+                                <div>
+                                    <div style="color: var(--text-muted);">Focal Length</div>
+                                    <div style="color: var(--text-primary); font-weight: 500;">${cam.focal_length_mm}mm</div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
+                                <button class="btn btn-danger" style="flex: 1;" onclick="removeCamera('${cam.camera_id}')">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            } catch (e) {
+                console.error('Error loading cameras:', e);
+            }
+        }
+
+        function showAddCameraModal() {
+            document.getElementById('add-camera-modal').classList.add('active');
+            document.getElementById('add-camera-form').reset();
+        }
+
+        async function addCamera(e) {
+            e.preventDefault();
+            const camera_id = document.getElementById('camera-id').value.trim();
+            const rtsp_url = document.getElementById('camera-rtsp').value.trim();
+            
+            if (!camera_id || !rtsp_url) {
+                alert('Camera ID and RTSP URL are required');
+                return;
+            }
+
+            const cameraData = {
+                camera_id: camera_id,
+                rtsp_url: rtsp_url,
+                focal_length_mm: parseFloat(document.getElementById('camera-focal').value) || 50.0,
+                sensor_width_mm: parseFloat(document.getElementById('camera-sensor').value) || 36.0,
+                frame_width: parseInt(document.getElementById('camera-width').value) || 1920,
+                frame_height: parseInt(document.getElementById('camera-height').value) || 1080,
+                known_face_width_cm: parseFloat(document.getElementById('camera-face-width').value) || 15.0
+            };
+
+            try {
+                const res = await fetch('/api/cameras', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(cameraData)
+                });
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    closeModal('add-camera-modal');
+                    loadCamerasList();
+                    loadCameras(); // Refresh live feed
+                    alert(data.message || 'Camera added successfully!');
+                } else {
+                    alert(data.error || 'Error adding camera');
+                }
+            } catch (e) {
+                alert('Error adding camera');
+            }
+        }
+
+        async function removeCamera(camera_id) {
+            if (!confirm(`Remove camera ${camera_id}? This will stop the stream.`)) return;
+            try {
+                const res = await fetch(`/api/cameras/${encodeURIComponent(camera_id)}`, { method: 'DELETE' });
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    loadCamerasList();
+                    loadCameras(); // Refresh live feed
+                    alert(data.message || 'Camera removed successfully!');
+                } else {
+                    alert(data.error || 'Error removing camera');
+                }
+            } catch (e) {
+                alert('Error removing camera');
+            }
+        }
+
+        loadCameras();
+        setInterval(() => {
+            if (document.getElementById('tab-events').classList.contains('active')) loadEvents();
+            if (document.getElementById('tab-analytics').classList.contains('active')) loadAnalytics();
+            if (document.getElementById('tab-cameras').classList.contains('active')) loadCamerasList();
+        }, 5000);
+    </script>
+</body>
+</html>

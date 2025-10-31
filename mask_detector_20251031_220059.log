@@ -1,0 +1,52 @@
+2025-10-31 22:01:00,041 - root - INFO - Loaded 2 face(s) for Raghav Sharma
+2025-10-31 22:01:00,041 - root - INFO - Face recognition initialized: 2 faces from 1 people
+2025-10-31 22:01:00,047 - root - INFO - Event capture interval set to 30.0s per camera
+2025-10-31 22:01:00,047 - root - INFO - Spatial deduplication enabled (will skip same person in same location)
+2025-10-31 22:01:00,047 - root - INFO - Loading YOLO model from runs/detect/train/weights/best.pt
+2025-10-31 22:01:00,076 - root - INFO - Model loaded successfully
+2025-10-31 22:01:00,076 - root - INFO - Web streaming server started on http://localhost:8080
+2025-10-31 22:01:00,076 - root - INFO - Web interface available at http://localhost:8080
+2025-10-31 22:01:00,076 - root - INFO - Connecting to camera Camera_1 (attempt 1/5)...
+2025-10-31 22:01:00,081 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.68:8080
+2025-10-31 22:01:00,081 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-31 22:01:00,563 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:00] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:00,566 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:00] "GET /analytics HTTP/1.1" 200 -
+2025-10-31 22:01:00,905 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:00] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:01,092 - root - INFO - Successfully connected to camera Camera_1 (test read took 0.02s)
+2025-10-31 22:01:01,092 - root - INFO - Started camera handler for Camera_1
+2025-10-31 22:01:01,574 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:01] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:01,623 - root - INFO - Mask detection system started. View at http://localhost:8080
+2025-10-31 22:01:01,914 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:01] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:02,563 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:02] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:02,909 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:02] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:03,562 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:03] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:03,906 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:03] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:04,561 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:04] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:04,911 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:04] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:05,241 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:05] "GET / HTTP/1.1" 200 -
+2025-10-31 22:01:05,266 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:05] "GET /api/cameras HTTP/1.1" 200 -
+2025-10-31 22:01:05,291 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:05] "GET /video_feed/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:06,272 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:06] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:07,271 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:07] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:08,271 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:08] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:09,270 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:09] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:10,270 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:10] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:11,270 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:11] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:11,845 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:11] "GET /analytics HTTP/1.1" 200 -
+2025-10-31 22:01:12,271 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:12] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:13,271 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:13] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:14,162 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:14] "GET /api/cameras HTTP/1.1" 200 -
+2025-10-31 22:01:14,271 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:14] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:15,283 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:15] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:15,284 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:15] "GET /api/cameras HTTP/1.1" 200 -
+2025-10-31 22:01:16,271 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:16] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:17,271 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:17] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:18,272 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:18] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:19,277 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:01:19] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:01:19,701 - root - INFO - Received keyboard interrupt
+2025-10-31 22:01:19,701 - root - INFO - Stopping mask detection system...
+2025-10-31 22:01:19,720 - root - INFO - Stopped camera handler for Camera_1
+2025-10-31 22:01:19,721 - root - INFO - System stopped

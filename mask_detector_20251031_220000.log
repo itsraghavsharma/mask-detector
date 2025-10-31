@@ -1,0 +1,124 @@
+2025-10-31 22:00:01,378 - root - INFO - Loaded 2 face(s) for Raghav Sharma
+2025-10-31 22:00:01,378 - root - INFO - Face recognition initialized: 2 faces from 1 people
+2025-10-31 22:00:01,383 - root - INFO - Event capture interval set to 30.0s per camera
+2025-10-31 22:00:01,383 - root - INFO - Spatial deduplication enabled (will skip same person in same location)
+2025-10-31 22:00:01,383 - root - INFO - Loading YOLO model from runs/detect/train/weights/best.pt
+2025-10-31 22:00:01,435 - root - INFO - Model loaded successfully
+2025-10-31 22:00:01,435 - root - INFO - Web streaming server started on http://localhost:8080
+2025-10-31 22:00:01,435 - root - INFO - Web interface available at http://localhost:8080
+2025-10-31 22:00:01,435 - root - INFO - Connecting to camera Camera_1 (attempt 1/5)...
+2025-10-31 22:00:01,454 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.68:8080
+2025-10-31 22:00:01,454 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-31 22:00:02,317 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:02] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:02,481 - root - INFO - Successfully connected to camera Camera_1 (test read took 0.04s)
+2025-10-31 22:00:02,485 - root - INFO - Started camera handler for Camera_1
+2025-10-31 22:00:02,992 - root - INFO - Mask detection system started. View at http://localhost:8080
+2025-10-31 22:00:03,326 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:03] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:04,320 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:04] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:05,354 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:05] "GET / HTTP/1.1" 200 -
+2025-10-31 22:00:05,568 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:05] "GET /video_feed/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:05,933 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:05] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:06,561 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:06] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:06,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:06] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:07,564 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:07] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:08,353 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:08,561 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:08,753 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /events?limit=100 HTTP/1.1" 200 -
+2025-10-31 22:00:08,779 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/73 HTTP/1.1" 200 -
+2025-10-31 22:00:08,779 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/71 HTTP/1.1" 200 -
+2025-10-31 22:00:08,779 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/70 HTTP/1.1" 200 -
+2025-10-31 22:00:08,780 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/69 HTTP/1.1" 200 -
+2025-10-31 22:00:08,781 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/72 HTTP/1.1" 200 -
+2025-10-31 22:00:08,787 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/68 HTTP/1.1" 200 -
+2025-10-31 22:00:08,790 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/67 HTTP/1.1" 200 -
+2025-10-31 22:00:08,790 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/65 HTTP/1.1" 200 -
+2025-10-31 22:00:08,790 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/66 HTTP/1.1" 200 -
+2025-10-31 22:00:08,791 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/63 HTTP/1.1" 200 -
+2025-10-31 22:00:08,797 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/64 HTTP/1.1" 200 -
+2025-10-31 22:00:08,804 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/60 HTTP/1.1" 200 -
+2025-10-31 22:00:08,806 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/62 HTTP/1.1" 200 -
+2025-10-31 22:00:08,804 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/61 HTTP/1.1" 200 -
+2025-10-31 22:00:08,812 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/59 HTTP/1.1" 200 -
+2025-10-31 22:00:08,812 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/58 HTTP/1.1" 200 -
+2025-10-31 22:00:08,813 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/57 HTTP/1.1" 200 -
+2025-10-31 22:00:08,815 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/56 HTTP/1.1" 200 -
+2025-10-31 22:00:08,817 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/55 HTTP/1.1" 200 -
+2025-10-31 22:00:08,822 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/52 HTTP/1.1" 200 -
+2025-10-31 22:00:08,822 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/53 HTTP/1.1" 200 -
+2025-10-31 22:00:08,823 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/54 HTTP/1.1" 200 -
+2025-10-31 22:00:08,825 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/51 HTTP/1.1" 200 -
+2025-10-31 22:00:08,829 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/50 HTTP/1.1" 200 -
+2025-10-31 22:00:08,831 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/49 HTTP/1.1" 200 -
+2025-10-31 22:00:08,831 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/48 HTTP/1.1" 200 -
+2025-10-31 22:00:08,831 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/47 HTTP/1.1" 200 -
+2025-10-31 22:00:08,832 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/45 HTTP/1.1" 200 -
+2025-10-31 22:00:08,836 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/46 HTTP/1.1" 200 -
+2025-10-31 22:00:08,839 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/44 HTTP/1.1" 200 -
+2025-10-31 22:00:08,840 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/42 HTTP/1.1" 200 -
+2025-10-31 22:00:08,844 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/43 HTTP/1.1" 200 -
+2025-10-31 22:00:08,847 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/41 HTTP/1.1" 200 -
+2025-10-31 22:00:08,848 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/40 HTTP/1.1" 200 -
+2025-10-31 22:00:08,848 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/39 HTTP/1.1" 200 -
+2025-10-31 22:00:08,853 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/38 HTTP/1.1" 200 -
+2025-10-31 22:00:08,855 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/37 HTTP/1.1" 200 -
+2025-10-31 22:00:08,860 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/36 HTTP/1.1" 200 -
+2025-10-31 22:00:08,861 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/33 HTTP/1.1" 200 -
+2025-10-31 22:00:08,861 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/35 HTTP/1.1" 200 -
+2025-10-31 22:00:08,864 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/34 HTTP/1.1" 200 -
+2025-10-31 22:00:08,866 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/32 HTTP/1.1" 200 -
+2025-10-31 22:00:08,866 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/31 HTTP/1.1" 200 -
+2025-10-31 22:00:08,871 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/29 HTTP/1.1" 200 -
+2025-10-31 22:00:08,872 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/30 HTTP/1.1" 200 -
+2025-10-31 22:00:08,874 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/28 HTTP/1.1" 200 -
+2025-10-31 22:00:08,874 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/27 HTTP/1.1" 200 -
+2025-10-31 22:00:08,878 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/26 HTTP/1.1" 200 -
+2025-10-31 22:00:08,880 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/24 HTTP/1.1" 200 -
+2025-10-31 22:00:08,882 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/25 HTTP/1.1" 200 -
+2025-10-31 22:00:08,883 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/23 HTTP/1.1" 200 -
+2025-10-31 22:00:08,889 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/22 HTTP/1.1" 200 -
+2025-10-31 22:00:08,894 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/21 HTTP/1.1" 200 -
+2025-10-31 22:00:08,945 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/18 HTTP/1.1" 200 -
+2025-10-31 22:00:08,946 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/20 HTTP/1.1" 200 -
+2025-10-31 22:00:08,947 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/19 HTTP/1.1" 200 -
+2025-10-31 22:00:08,949 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/17 HTTP/1.1" 200 -
+2025-10-31 22:00:08,955 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/16 HTTP/1.1" 200 -
+2025-10-31 22:00:08,956 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:08,957 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/15 HTTP/1.1" 200 -
+2025-10-31 22:00:08,962 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/13 HTTP/1.1" 200 -
+2025-10-31 22:00:08,965 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/12 HTTP/1.1" 200 -
+2025-10-31 22:00:08,966 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/14 HTTP/1.1" 200 -
+2025-10-31 22:00:08,968 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/11 HTTP/1.1" 200 -
+2025-10-31 22:00:08,972 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/9 HTTP/1.1" 200 -
+2025-10-31 22:00:08,972 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/10 HTTP/1.1" 200 -
+2025-10-31 22:00:08,973 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/7 HTTP/1.1" 200 -
+2025-10-31 22:00:08,975 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/8 HTTP/1.1" 200 -
+2025-10-31 22:00:08,978 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/5 HTTP/1.1" 200 -
+2025-10-31 22:00:08,979 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/6 HTTP/1.1" 200 -
+2025-10-31 22:00:08,982 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/4 HTTP/1.1" 200 -
+2025-10-31 22:00:08,982 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/3 HTTP/1.1" 200 -
+2025-10-31 22:00:08,983 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/1 HTTP/1.1" 200 -
+2025-10-31 22:00:08,984 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:08] "GET /event_image/2 HTTP/1.1" 200 -
+2025-10-31 22:00:09,281 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:09] "GET /faces HTTP/1.1" 200 -
+2025-10-31 22:00:09,293 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:09] "GET /face_image/Raghav%20Sharma/1761925042256549_raghav_profile_photo.jpeg HTTP/1.1" 200 -
+2025-10-31 22:00:09,317 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:09] "GET /face_image/Raghav%20Sharma/1761925042255826_21BCE11317.png HTTP/1.1" 200 -
+2025-10-31 22:00:09,561 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:09] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:10,220 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:10] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:10,415 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:10] "GET /analytics HTTP/1.1" 200 -
+2025-10-31 22:00:10,562 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:10] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:10,564 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:10] "GET /analytics HTTP/1.1" 200 -
+2025-10-31 22:00:10,941 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:10] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:11,561 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:11] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:11,926 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:11] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:12,562 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:12] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:12,907 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:12] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:13,561 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:13] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:13,911 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:13] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:14,561 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:14] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:14,970 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 22:00:14] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 22:00:15,072 - root - INFO - Received keyboard interrupt
+2025-10-31 22:00:15,072 - root - INFO - Stopping mask detection system...
+2025-10-31 22:00:15,095 - root - INFO - Stopped camera handler for Camera_1
+2025-10-31 22:00:15,095 - root - INFO - System stopped

@@ -1,0 +1,16 @@
+2025-10-31 22:01:42,478 - root - INFO - Loaded 2 face(s) for Raghav Sharma
+2025-10-31 22:01:42,478 - root - INFO - Face recognition initialized: 2 faces from 1 people
+2025-10-31 22:01:42,482 - root - INFO - Event capture interval set to 30.0s per camera
+2025-10-31 22:01:42,482 - root - INFO - Spatial deduplication enabled (will skip same person in same location)
+2025-10-31 22:01:42,482 - root - INFO - Loading YOLO model from runs/detect/train/weights/best.pt
+2025-10-31 22:01:42,499 - root - INFO - Model loaded successfully
+2025-10-31 22:01:42,500 - root - INFO - Web streaming server started on http://localhost:5000
+2025-10-31 22:01:42,500 - root - INFO - Web interface available at http://localhost:5000
+2025-10-31 22:01:42,500 - root - INFO - Connecting to camera Camera_1 (attempt 1/5)...
+2025-10-31 22:01:43,482 - root - INFO - Successfully connected to camera Camera_1 (test read took 0.02s)
+2025-10-31 22:01:43,482 - root - INFO - Started camera handler for Camera_1
+2025-10-31 22:01:43,988 - root - INFO - Mask detection system started. View at http://localhost:5000
+2025-10-31 22:01:57,581 - root - INFO - Received keyboard interrupt
+2025-10-31 22:01:57,581 - root - INFO - Stopping mask detection system...
+2025-10-31 22:01:57,610 - root - INFO - Stopped camera handler for Camera_1
+2025-10-31 22:01:57,611 - root - INFO - System stopped

@@ -1,0 +1,13 @@
+{
+  "cameras": [
+    {
+      "rtsp_url": "rtsp://admin:Krishna%40429@192.168.1.25:554/Streaming/Channels/101",
+      "camera_id": "Camera_1",
+      "focal_length_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "known_face_width_cm": 15.0
+    }
+  ]
+}

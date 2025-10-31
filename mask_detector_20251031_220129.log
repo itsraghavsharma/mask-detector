@@ -1,0 +1,15 @@
+2025-10-31 22:01:30,022 - root - INFO - Loaded 2 face(s) for Raghav Sharma
+2025-10-31 22:01:30,023 - root - INFO - Face recognition initialized: 2 faces from 1 people
+2025-10-31 22:01:30,023 - root - INFO - Event capture interval set to 30.0s per camera
+2025-10-31 22:01:30,023 - root - INFO - Spatial deduplication enabled (will skip same person in same location)
+2025-10-31 22:01:30,023 - root - INFO - Loading YOLO model from runs/detect/train/weights/best.pt
+2025-10-31 22:01:30,049 - root - INFO - Model loaded successfully
+2025-10-31 22:01:30,049 - root - INFO - Connecting to camera Camera_1 (attempt 1/5)...
+2025-10-31 22:01:31,075 - root - INFO - Successfully connected to camera Camera_1 (test read took 0.03s)
+2025-10-31 22:01:31,077 - root - INFO - Started camera handler for Camera_1
+2025-10-31 22:01:31,583 - root - INFO - Mask detection system started. Press 'q' to quit.
+2025-10-31 22:01:31,932 - root - ERROR - Display error (disabling display): Unknown C++ exception from OpenCV code
+2025-10-31 22:01:37,082 - root - INFO - Received keyboard interrupt
+2025-10-31 22:01:37,082 - root - INFO - Stopping mask detection system...
+2025-10-31 22:01:37,091 - root - INFO - Stopped camera handler for Camera_1
+2025-10-31 22:01:37,092 - root - INFO - System stopped

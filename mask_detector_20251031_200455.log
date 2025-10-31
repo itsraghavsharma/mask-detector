@@ -1,0 +1,322 @@
+2025-10-31 20:04:55,821 - root - INFO - Loading YOLO model from runs/detect/train/weights/best.pt
+2025-10-31 20:04:55,846 - root - INFO - Model loaded successfully
+2025-10-31 20:04:55,846 - root - INFO - Web streaming server started on http://localhost:8080
+2025-10-31 20:04:55,846 - root - INFO - Web interface available at http://localhost:8080
+2025-10-31 20:04:55,846 - root - INFO - Connecting to camera Camera_1 (attempt 1/3)...
+2025-10-31 20:04:55,851 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.71:8080
+2025-10-31 20:04:55,851 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-31 20:04:56,813 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:04:56] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:04:56,863 - root - INFO - Successfully connected to camera Camera_1
+2025-10-31 20:04:56,863 - root - INFO - Started camera handler for Camera_1
+2025-10-31 20:04:57,368 - root - INFO - Mask detection system started. View at http://localhost:8080
+2025-10-31 20:04:57,811 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:04:57] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:04:58,812 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:04:58] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:04:59,812 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:04:59] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:00,810 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:00] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:01,810 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:01] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:01,911 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:01] "GET / HTTP/1.1" 200 -
+2025-10-31 20:05:01,934 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:01] "GET /video_feed/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:02,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:02] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:03,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:03] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:04,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:04] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:05,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:05] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:06,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:06] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:07,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:07] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:08,938 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:08] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:09,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:09] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:10,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:10] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:11,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:11] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:12,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:12] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:13,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:13] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:14,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:14] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:15,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:15] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:16,921 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:16] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:17,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:17] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:18,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:18] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:19,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:19] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:20,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:20] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:21,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:21] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:22,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:22] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:23,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:23] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:24,925 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:24] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:25,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:25] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:26,926 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:26] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:27,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:27] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:28,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:28] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:29,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:29] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:30,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:30] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:31,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:31] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:32,921 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:32] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:33,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:33] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:34,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:34] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:35,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:35] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:36,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:36] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:37,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:37] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:38,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:38] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:39,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:39] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:40,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:40] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:41,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:41] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:42,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:42] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:43,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:43] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:44,925 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:44] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:45,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:45] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:46,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:46] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:47,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:47] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:48,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:48] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:49,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:49] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:50,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:50] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:51,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:51] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:52,925 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:52] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:53,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:53] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:54,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:54] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:55,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:55] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:56,927 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:56] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:57,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:57] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:58,921 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:58] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:05:59,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:05:59] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:00,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:00] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:01,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:01] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:02,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:02] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:03,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:03] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:04,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:04] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:05,927 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:05] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:06,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:06] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:07,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:07] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:08,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:08] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:09,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:09] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:10,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:10] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:11,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:11] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:12,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:12] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:13,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:13] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:14,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:14] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:15,921 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:15] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:16,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:16] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:17,931 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:17] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:18,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:18] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:19,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:19] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:20,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:20] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:21,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:21] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:22,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:22] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:23,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:23] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:24,925 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:24] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:25,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:25] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:26,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:26] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:27,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:27] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:28,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:28] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:29,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:29] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:30,921 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:30] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:31,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:31] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:32,925 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:32] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:33,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:33] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:34,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:34] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:35,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:35] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:36,921 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:36] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:37,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:37] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:38,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:38] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:39,926 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:39] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:40,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:40] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:41,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:41] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:42,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:42] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:43,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:43] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:44,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:44] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:45,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:45] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:46,921 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:46] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:47,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:47] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:48,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:48] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:49,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:49] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:50,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:50] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:51,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:51] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:52,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:52] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:53,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:53] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:54,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:54] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:55,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:55] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:56,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:56] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:57,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:57] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:58,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:58] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:06:59,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:06:59] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:00,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:00] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:01,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:01] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:02,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:02] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:03,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:03] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:04,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:04] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:05,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:05] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:06,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:06] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:07,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:07] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:08,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:08] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:09,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:09] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:10,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:10] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:11,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:11] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:12,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:12] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:13,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:13] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:14,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:14] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:15,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:15] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:16,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:16] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:17,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:17] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:18,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:18] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:19,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:19] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:20,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:20] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:21,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:21] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:22,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:22] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:23,928 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:23] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:24,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:24] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:25,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:25] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:26,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:26] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:27,925 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:27] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:28,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:28] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:29,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:29] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:30,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:30] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:31,927 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:31] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:32,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:32] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:33,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:33] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:34,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:34] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:35,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:35] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:36,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:36] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:37,922 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:37] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:38,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:38] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:39,923 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:39] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:42,700 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:42] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:43,060 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:43] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:43,925 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:43] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:44,927 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:44] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:45,931 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:45] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:46,926 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:46] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:47,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:47] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:48,674 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:48,779 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:48,884 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:48,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:48] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:48,990 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:49,093 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:49,198 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:49,303 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:49,405 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:49,510 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:49,615 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:49,718 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:49,823 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:49,924 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:49] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:49,927 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,030 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,136 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,241 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,345 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,447 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,552 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,658 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,763 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,866 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:50,890 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:50] "GET / HTTP/1.1" 200 -
+2025-10-31 20:07:50,929 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:50] "GET /video_feed/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:50,971 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:51,077 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:51,182 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:51,284 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:51,388 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:51,493 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:51,598 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:51,703 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:51,809 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:51,909 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:51] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:51,914 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,019 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,124 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,229 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,331 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,436 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,541 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,647 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,752 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,856 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:52,908 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:52] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:52,961 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,062 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,164 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,269 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,374 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,479 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,584 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,689 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,794 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,899 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:53,908 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:53] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:54,004 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:54,105 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:54,208 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:54,314 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:54,417 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:54,518 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:54,619 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:54,719 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:54,822 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:54,909 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:54] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:54,928 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,028 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,133 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,238 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,343 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,447 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,523 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:55] "GET / HTTP/1.1" 200 -
+2025-10-31 20:07:55,541 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:55] "GET /video_feed/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:55,548 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,653 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,758 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,863 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:55,963 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:56,068 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:56,098 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:56] "GET / HTTP/1.1" 200 -
+2025-10-31 20:07:56,112 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:56] "GET /video_feed/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:56,174 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:56,276 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:56,381 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:56,486 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:56,591 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:56,696 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:56,798 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:56,900 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:57,005 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:57,107 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:57] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:57,110 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:57,211 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:57,447 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:57,556 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:57,663 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:57,768 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:57,872 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:57,977 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:58,077 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:58,106 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:58] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:58,196 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:58,309 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:58,415 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:58,524 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:58,625 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:58,731 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:58,834 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:58,939 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,044 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,107 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:07:59] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:07:59,149 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,250 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,354 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,458 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,563 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,666 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,772 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,875 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:07:59,979 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:08:00,084 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:08:00,108 - werkzeug - INFO - 127.0.0.1 - - [31/Oct/2025 20:08:00] "GET /stats/Camera_1 HTTP/1.1" 200 -
+2025-10-31 20:08:00,188 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:08:00,293 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:08:00,395 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:08:00,498 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:08:00,603 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:08:00,708 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:08:00,813 - root - WARNING - Failed to read frame from camera Camera_1
+2025-10-31 20:08:00,853 - root - INFO - Received keyboard interrupt
+2025-10-31 20:08:00,853 - root - INFO - Stopping mask detection system...
+2025-10-31 20:08:00,923 - root - INFO - Stopped camera handler for Camera_1
+2025-10-31 20:08:00,960 - root - INFO - System stopped
